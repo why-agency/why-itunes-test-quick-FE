@@ -72,7 +72,7 @@ For the Full Stack Developer position, this extra task tests your understanding 
 
 **Focus Task**: Implement an `/api/similar/{artistId}` endpoint that, based on the artist id, generates 3 artist suggestions using AI / LLMs (we like using the [Vercel AI SDK](https://ai-sdk.dev/docs/introduction)).
 
-- OpenAI API Key: [https://share.1password.com/s#RNlNRd59peNbdRXjmKtMe5-rbkk4DB6lh9UuKZRw8CA](https://share.1password.com/s#RNlNRd59peNbdRXjmKtMe5-rbkk4DB6lh9UuKZRw8CA) (link expires Sep 13)
+- OpenAI API Key: [1password link](https://share.1password.com/s#-CrGCHHpx89lGhSkAigYQs0bp0qQWHGbVPxVOzmfK6Q) (link expires Nov 8)
 
 This task is not just about structuring the AI output and combining it with the API but also about your conceptional thinking behind the prompt - so give that some thought. 
 
