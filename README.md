@@ -44,7 +44,7 @@ The mockup serves as a basic idea of the grid. Feel free to style it in a way th
   - Fetching should be done in a Next.js [server component](https://nextjs.org/docs/app/getting-started/fetching-data)
 
 - Render the items as cards in a grid layout. The layout should be responsive and work on desktop and mobile screen sizes.
-- Style the card and the grid.
+- Style the card and the grid in a basic way.
 
 ### ⭐ Additional steps
 
