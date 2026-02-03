@@ -7,9 +7,8 @@ export default async function MusicGrid() {
     console.log(musicData);
 
     return (
-        <div className="font-sans h-dvh w-full px-8">
+        <div className="font-sans h-dvh w-full px-8 py-8">
 
-            <h1>Search Results</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {musicData.results.map((item: any) => (
                     <div
