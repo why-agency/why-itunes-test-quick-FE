@@ -68,4 +68,4 @@ Pick tasks from the following list that you consider relevant or interesting to 
 - Styling is preferrably done in [tailwind](https://tailwindcss.com/). If necessary you can fall back to css approaches.
 - Feel free to use anything else that helps you. (Maybe [shadcn](https://ui.shadcn.com/) or [motion](https://motion.dev/))
 - Your code should respect eslint and prettier.
-- Commit your changes with git and provide meaningfull commit messages.
+- Commit your changes with git and provide meaningful commit messages.
