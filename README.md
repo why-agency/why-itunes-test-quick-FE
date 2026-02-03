@@ -1,86 +1,67 @@
+# Junior Frontend Test
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+Welcome to the &why Coding Challenge 👋 To get started:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Install the packages with `pnpm install` or `pnpm install`
+- Run the development server with `pnpm run dev` or `npm run dev`
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+(You can also use other package manager if you like)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-# Full Stack (FE+BE) Developer Test
+Goal of this challenge is to get an impression of how you approach and solve a simple task.
 
-This test consists of a base task and a focus task. The base task is required for all applicants. Choose one focus task depending on your field of expertise.
+- The task is open-ended and there's no need to finish everything. Just show us what you achieved within the given time.
 
-## Introduction
+- Usage of AI coding assistants is okay, but make sure to have an understanding of all code you commit. We will ask you technical questions about the code in the interview.
 
-This task should take around 3 hours to complete. Please do not spend more than 4 hours. It is not expected that you finish all tasks with production-level quality in the time given. Besides output, we want to see your understanding of the tasks, your strengths, approach and philosophy. There will be time in the interview to discuss what you didn't have time to finish and the trade-offs you made.
+💡 Less code that you can explain is better than a lot of code where you are unsure how it works in detail.
 
-Usage of AI coding assistants is encouraged, but be mindful that we will ask questions to test your understanding of the code in the interview.
+When you are done, please create a PR in the repository including a short description
 
-When you are done, please create a PR in the repository including a description of your changes.
-
-If you need to be added with a different account, or run into any trouble, contact [dario.sanchez@why.de](mailto:dario.sanchez@why.de) asap.
-
-### Setup Notes
-
-- We recommend using pnpm. If you use a different package manager, delete the `pnpm-lock.yaml` file first.
-    - Quick intro: `pnpm i` to install dependencies, `pnpm dev` to run dev mode (with live changes), `pnpm build` to build and `pnpm start` to serve the built version locally.
-
-## Base Task
+## Task
 
 Display a grid of music search results (artists, albums, songs) with the name and an image if available. Feel free to also display other information returned in the API response.
 
 Here is a Figma file with a basic mockup: https://www.figma.com/design/QaAUTjri39HPaSUTEoMfWQ/Cat-Grid?node-id=282-53
 
-UI polish is not the focus of the base task. Feel free to use component libraries to speed up development. We like [shadcn](https://ui.shadcn.com/). Other than that, please use [TailwindCSS](https://tailwindcss.com/) (it's already set up).
+The mockup serves as a basic idea of the grid. Feel free to style it in a way that you think makes sense.
 
-**Requirements**:
+### Base steps
 
 - Fetch data from the [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1)
-    - Example request: `https://itunes.apple.com/search?media=music&entity=musicArtist,album,song&term={your+search+term}`
-- A search bar for plaintext search. The search should trigger automatically as the user types (debounced), without requiring a button click.
-- A filter row below the search bar with:
-    - Entity type filter (artist, album, song) — use the API's `entity` parameter
-    - Client side genre filter
-    - Explicit content checkbox (defaults to unchecked/hidden) — use the API's `explicit` parameter
-- The grid must be responsive and work on desktop and mobile screen sizes.
-- Fetching should be done via Next.js server actions.
 
-## Frontend Focus Task
+  - Example request: `https://itunes.apple.com/search?media=music&entity=musicArtist,album,song&term={your+search+term}`
+  - Fetching should be done in a Next.js [server component](https://nextjs.org/docs/app/getting-started/fetching-data)
 
-For the Frontend Developer position. This task focuses on page navigation, animations, and data fetching.
+- Render the items as cards in a grid layout. The layout should be responsive and work on desktop and mobile screen sizes.
+- Style the card and the grid.
 
-**Requirements**:
+### Additional steps
+
+Pick tasks from the following list that you consider relevant or interesting to you:
+
+- Add more styling or animations. (Hover, Appear on page load,etc.). You can use [Motion](https://motion.dev/) or plain tailwind.
+- Add a search bar for plaintext search. The search could trigger automatically as the user types (debounced), without requiring a button click.
+- Add a filter row to allow the user to filter:
+
+  - Filtering e.g. by entity type filter (artist, album, song) — use the API's `entity` parameter
+  - Explicit content checkbox (defaults to unchecked/hidden) — use the API's `explicit` parameter
+  - Think about routing and search params.
 
 - Implement sorting by name (alphabetical ascending/descending). The user should be able to toggle this via a button.
-- Use [Motion](https://motion.dev/) to add interactivity or animation. Where and how is up to you — be creative and show us what you can do.
-- Clicking on a card opens a detail view with more information. For example, clicking an album shows a page with all its songs. Be creative with what makes sense for each entity type.
-    - Example request: `https://itunes.apple.com/lookup?id={albumId}&entity=song`
 
-**Bonus**
-- Instead of navigating to a new page, open the detail view in a modal using [Next.js route interception](https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes). This is an advanced pattern — don't let it eat into time for the core requirements.
+- Clicking on a card opens a detail page or detail view with more information. For example, clicking an album shows a page with all its songs. You could render different things depending on the entity type. Think about routing for the detail view.
 
-## Backend Focus Task
+## Technologies to use
 
-For the Full Stack Developer position. This task focuses on API design and AI integration.
-
-**Requirements**:
-
-Implement a `/api/similar/{artistId}` endpoint that takes an artist ID and returns 3 similar artist suggestions generated by an LLM. We recommend using the [Vercel AI SDK](https://ai-sdk.dev/docs/introduction).
-
-- OpenAI API Key will be provided.
-
-This task is not just about structuring the AI output — we're also interested in your thinking behind the prompt design.
-
-Trigger this endpoint from the frontend. Then, use the iTunes API to fetch information about the suggested artists and display them to the user.
+- This is a next.js/react app, so please write react components and rely on next.js features
+- Styling is preferrably done in [tailwind](https://tailwindcss.com/).
+- Feel free to use anything else that helps you. (Maybe [shadcn](https://ui.shadcn.com/) or [motion](https://motion.dev/))
+- Your code should respect eslint and prettier
