@@ -1,10 +1,10 @@
 import { getMusicData } from "@/lib/api";
-import { div } from "motion/react-client";
 
 
 
 export default async function MusicGrid() {
     const musicData = await getMusicData();
+    console.log(musicData);
 
     return (
         <div className="font-sans h-dvh w-full px-8">
@@ -14,8 +14,8 @@ export default async function MusicGrid() {
                 {musicData.results.map((item: any) => (
                     <div key={item.trackId} className="music-item">
                         <img src={item.artworkUrl100.replace("100x100", "600x600")} alt={item.trackName} className="w-96" />
-                        <h2>{item.trackName}</h2>
-                        <p>{item.artistName}</p>
+                        <h2>Genre: {item.primaryGenreName}</h2>
+                        <p>Artist: {item.artistName}</p>
                     </div>
                 ))}
             </div>
